@@ -20,3 +20,4 @@ library
                      bytestring >= 0.9 && < 1.0
   other-modules:     Data.RFC5051.UnicodeData
                      Data.RFC5051.TH
+                     Data.RFC5051.Types
