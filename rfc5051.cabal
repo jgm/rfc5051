@@ -12,12 +12,22 @@ build-type:          Simple
 cabal-version:       >=1.8
 extra-data-files:    UnicodeData.txt
 
+flag MkUnicodeData
+  default:           False
+  description:       Build MkUnicodeData (code generator for Data/RFC5051/UnicodeData)
+
 library
   exposed-modules:   Data.RFC5051
   build-depends:     base ==4.5.*,
                      containers ==0.4.*,
-                     template-haskell,
                      bytestring >= 0.9 && < 1.0
   other-modules:     Data.RFC5051.UnicodeData
-                     Data.RFC5051.TH
                      Data.RFC5051.Types
+
+executable MkUnicodeData
+  main-is:           MkUnicodeData.hs
+  build-depends:     base ==4.5.*,
+                     containers ==0.4.*,
+                     bytestring >= 0.9 && < 1.0
+  other-modules:     Data.RFC5051.Types
+
