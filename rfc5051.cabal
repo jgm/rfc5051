@@ -16,6 +16,7 @@ library
   exposed-modules:   Data.RFC5051
   build-depends:     base ==4.5.*,
                      containers ==0.4.*,
-                     file-embed >= 0.0 && < 0.1,
+                     template-haskell,
                      bytestring >= 0.9 && < 1.0
   other-modules:     Data.RFC5051.UnicodeData
+                     Data.RFC5051.TH
