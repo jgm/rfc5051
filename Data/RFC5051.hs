@@ -5,7 +5,9 @@ import qualified Data.Map as M
 import Data.Char (ord, toTitle)
 
 compareUnicode :: String -> String -> Ordering
-compareUnicode x y = compare (canonicalize x) (canonicalize y)
+compareUnicode x y = case compare (canonicalize x) (canonicalize y) of
+                          EQ  -> compare x y
+                          v   -> v
 
 canonicalize :: String -> [[Int]]
 canonicalize = map (decompose . ord . toTitle)
