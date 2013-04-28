@@ -2,8 +2,8 @@
 module Data.RFC5051.UnicodeData (unicodeData)
 where
 import Data.RFC5051.TH (embedFile)
-import Data.RFC5051.Types (S)
+import Data.RFC5051.Types
 import qualified Data.ByteString as B
 
-unicodeData :: [[S]]
+unicodeData :: [(Int, Int)]
 unicodeData = $(embedFile "UnicodeData.txt")
