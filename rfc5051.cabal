@@ -2,6 +2,41 @@ name:                rfc5051
 version:             0.1.0.0
 synopsis:            Simple unicode collation as per RFC5051.
 description:
+  This library implements the simple, non locale-sensitive unicode collation
+  algorithm described in RFC 5051 (<http://www.rfc-editor.org/rfc/rfc5051.txt>).
+  Proper unicode collation can be done using text-icu, but that is a big
+  dependency that depends on a large C library, and rfc5051 might be better
+  for some purposes.
+  .
+  Here is a list of strings sorted by the Prelude's @sort@ function:
+  @
+  Abe
+  Oeb
+  abe
+  abé
+  oeb
+  Ábe
+  Äbe
+  Ôeb
+  ábe
+  äbe
+  ôeb
+  @
+  Here is the same list sorted by @sortBy compareUnicode@:
+  @
+  Abe
+  abe
+  abé
+  Ábe
+  ábe
+  Äbe
+  äbe
+  Oeb
+  oeb
+  Ôeb
+  ôeb
+  @
+
 license:             BSD3
 license-file:        LICENSE
 author:              John MacFarlane
