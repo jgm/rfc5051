@@ -10,7 +10,7 @@ copyright:           (C) 2013 John MacFarlane
 category:            Text
 build-type:          Simple
 cabal-version:       >=1.8
-extra-data-files:    UnicodeData.txt
+extra-source-files:  UnicodeData.txt
 
 flag MkUnicodeData
   default:           False
@@ -30,4 +30,7 @@ executable MkUnicodeData
                      containers ==0.4.*,
                      bytestring >= 0.9 && < 1.0
   other-modules:     Data.RFC5051.Types
-
+  if flag(MkUnicodeData)
+    buildable:       True
+  else
+    buildable:       False
