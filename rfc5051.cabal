@@ -1,5 +1,5 @@
 name:                rfc5051
-version:             0.1.0.3
+version:             0.1.0.4
 synopsis:            Simple unicode collation as per RFC5051.
 description:
   This library implements @i;unicode-casemap@,
@@ -10,12 +10,12 @@ description:
   for some purposes.
   .
   Here is a list of strings sorted by the Prelude's @sort@ function:
-  .
-  @Abe Oeb abe abé oeb Ábe Äbe Ôeb ábe äbe ôeb@.
+
+  @Abe Oeb abe ab&#233; oeb &#193;be &#196;be &#212;eb &#225;be &#228;be &#244;eb@.
   .
   Here is the same list sorted by @sortBy compareUnicode@:
   .
-  @Abe abe abé Ábe ábe Äbe äbe Oeb oeb Ôeb ôeb@.
+  @Abe abe ab&#233; &#193;be &#225;be &#196;be &#228;be Oeb oeb &#212;eb &#244;eb@
 
 license:             BSD3
 license-file:        LICENSE
