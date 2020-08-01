@@ -43,7 +43,6 @@ library
                      text
   hs-source-dirs:    src
   other-modules:     Data.RFC5051.UnicodeData
-                     Data.RFC5051.Types
 
 test-suite test-rfc5051
   type:           exitcode-stdio-1.0
