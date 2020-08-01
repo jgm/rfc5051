@@ -3,18 +3,25 @@ where
 import Data.RFC5051.UnicodeData (decompositionMap)
 import qualified Data.Map as M
 import Data.Char (ord, toTitle)
+import Data.Text (Text)
+import qualified Data.Text as T
 
 -- | Compare two strings using @i;unicode-casemap@,
 -- the simple unicode collation algorithm described in RFC 5051.
-compareUnicode :: String -> String -> Ordering
-compareUnicode x y = case compare x' y' of
-                          EQ  -> compare (x', x) (y', y)
-                          v   -> v
-  where x' = canonicalize x
-        y' = canonicalize y
+compareUnicode :: Text -> Text -> Ordering
+compareUnicode x y =
+  case (T.uncons x, T.uncons y) of
+    (Nothing, Nothing) -> EQ
+    (Nothing, Just _)  -> LT
+    (Just _, Nothing)  -> GT
+    (Just (xc,x'), Just (yc,y')) ->
+      case compare (canonicalize xc) (canonicalize yc) of
+        GT -> GT
+        LT -> LT
+        EQ -> compareUnicode x' y'
 
-canonicalize :: String -> [[Int]]
-canonicalize = map (decompose . ord . toTitle)
+canonicalize :: Char -> [Int]
+canonicalize = decompose . ord . toTitle
 
 decompose :: Int -> [Int]
 decompose c =
