@@ -37,9 +37,10 @@ oeb
 ôeb
 
 The library's data module, `Data.RFC5051.UnicodeData`, is generated
-from the data file `UnicodeData.txt`.  To regenerate it:
+from the data file `UnicodeData.txt`.  To regenerate it, use the
+Makefile or:
 
     cabal configure -fMkUnicodeData
     cabal build
-    dist/build/MkUnicodeData/MkUnicodeData > Data/RFC5051/UnicodeData.hs
+    dist/build/MkUnicodeData/MkUnicodeData > src/Data/RFC5051/UnicodeData.hs
 
