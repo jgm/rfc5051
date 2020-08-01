@@ -52,15 +52,3 @@ test-suite test-rfc5051
   build-depends:     base >= 4.2 && < 5,
                      text,
                      rfc5051
-
-executable MkUnicodeData
-  main-is:           MkUnicodeData.hs
-  hs-source-dirs:    ., src
-  other-modules:     Data.RFC5051.Types
-  build-depends:     base >= 4.2 && < 5,
-                     containers,
-                     bytestring
-  if flag(MkUnicodeData)
-    buildable:       True
-  else
-    buildable:       False
