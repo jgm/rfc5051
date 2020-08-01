@@ -12,11 +12,11 @@ description:
   .
   Here is a list of strings sorted by the Prelude's @sort@ function:
   .
-  @Abe Oeb abe ab&#233; oeb &#193;be &#196;be &#212;eb &#225;be &#228;be &#244;eb@.
+  Abe Oeb abe ab&#233; oeb &#193;be &#196;be &#212;eb &#225;be &#228;be &#244;eb.
   .
   Here is the same list sorted by @sortBy compareUnicode@:
   .
-  @Abe abe ab&#233; &#193;be &#225;be &#196;be &#228;be Oeb oeb &#212;eb &#244;eb@
+  Abe abe ab&#233; &#193;be &#225;be &#196;be &#228;be Oeb oeb &#212;eb &#244;eb
 
 license:             BSD3
 license-file:        LICENSE
