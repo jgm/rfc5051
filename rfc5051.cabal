@@ -1,5 +1,5 @@
 name:                rfc5051
-version:             0.1.0.4
+version:             0.2
 synopsis:            Simple unicode collation as per RFC5051.
 description:
   This library implements @i;unicode-casemap@,
