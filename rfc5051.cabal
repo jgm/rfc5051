@@ -55,10 +55,11 @@ test-suite test-rfc5051
 
 executable MkUnicodeData
   main-is:           MkUnicodeData.hs
+  hs-source-dirs:    ., src
+  other-modules:     Data.RFC5051.Types
   build-depends:     base >= 4.2 && < 5,
                      containers,
                      bytestring
-  other-modules:     Data.RFC5051.Types
   if flag(MkUnicodeData)
     buildable:       True
   else
