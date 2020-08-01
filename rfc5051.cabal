@@ -39,7 +39,6 @@ library
   exposed-modules:   Data.RFC5051
   build-depends:     base >= 4.2 && < 5,
                      containers,
-                     bytestring,
                      text
   hs-source-dirs:    src
   other-modules:     Data.RFC5051.UnicodeData
